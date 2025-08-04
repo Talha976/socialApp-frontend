@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import './app.css'
+import './App.css'
 import Home from './components/userComponents/Home';
 import Network from './components/userComponents/Network';
 import Login from './components/userComponents/Login';

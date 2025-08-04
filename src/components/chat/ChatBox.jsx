@@ -34,7 +34,7 @@ const ChatBox = ({ onBackClick }) => {
   };
 
   return (
-    <div className="bg-white bg-opacity-10 backdrop-blur-md shadow-lg border border-white border-opacity-20 rounded p-4 mt-12 w-[400px] min-h-[470px] lg:w-[700px] relative">
+    <div className="bg-white bg-opacity-10 backdrop-blur-md shadow-lg border border-white border-opacity-20 rounded p-4 mt-12 h-full w-full relative">
       {!selectedConversation ? (
         <NoChatSelected />
       ) : (
@@ -85,9 +85,9 @@ export default ChatBox;
 const NoChatSelected = () => {
   const  authUser  = useSelector((state)=>state.auth.user)
   return (
-    <div className="flex items-center justify-center h-full w-full">
+    <div className="flex items-center justify-center h-full min-h-[700px] w-full min-w-[700px]">
       <div className="px-4 sm:text-lg md:text-xl font-semibold flex flex-col items-center gap-2 text-white text-center mt-28">
-        <p>Welcome🙌 {authUser.info.firstName} {authUser.info.lastName}</p>
+        <p>Welcome🙌 {authUser?.info?.firstName} {authUser?.info?.lastName}</p>
         <p>Select a chat to start Messaging</p>
         <FontAwesomeIcon className="text-3xl md:text-6xl text-center" icon={faMessage} />
       </div>
